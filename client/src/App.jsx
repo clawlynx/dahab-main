@@ -15,6 +15,7 @@ import AuthLayout from "./pages/auth/AuthLayout";
 import LoginPage from "./pages/auth/LoginPage";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import AdminCategoryPage from "./pages/admin/category/AdminCategoryPage";
+import EditProduct from "./pages/admin/Products/EditProduct";
 
 function App() {
   const router = createBrowserRouter([
@@ -62,9 +63,14 @@ function App() {
           path: "products/new",
           element: <AddNewProduct />,
         },
+
         {
           path: "products/:id",
           element: <SingleProductPage />,
+        },
+        {
+          path: "products/:id/edit",
+          element: <EditProduct />,
         },
         {
           path: "category",
