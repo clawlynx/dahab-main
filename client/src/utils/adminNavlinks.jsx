@@ -1,6 +1,7 @@
 import { AiFillProduct } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import { MdCategory } from "react-icons/md";
+import { ImBlog } from "react-icons/im";
 import { MdDashboardCustomize } from "react-icons/md";
 export const adminNavLinks = [
   {
@@ -23,5 +24,12 @@ export const adminNavLinks = [
     path: "/admin/category",
     urlword: "category",
     icon: <MdCategory />,
+  },
+  {
+    id: 4,
+    name: "Blogs",
+    path: "/admin/blogs",
+    urlword: "blogs",
+    icon: <ImBlog />,
   },
 ];

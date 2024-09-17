@@ -15,6 +15,9 @@ const AdminSchema = new Schema(
       type: String,
       required: true,
     },
+    verificationCode: {
+      type: String,
+    },
   },
   {
     timestamps: true,

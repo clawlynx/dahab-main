@@ -23,7 +23,7 @@ const useGetUser = () => {
           throw new Error(data.error);
         }
         if (data.msg === "success") {
-          dispatch(setUser(data.user));
+          dispatch(setUser(data.userInfo));
         } else {
           console.log(data.msg);
           navigate("/auth/login");
@@ -34,7 +34,7 @@ const useGetUser = () => {
         );
         navigate("/auth/login");
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
     getUserDetails();

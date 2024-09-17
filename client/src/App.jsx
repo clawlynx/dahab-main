@@ -16,6 +16,11 @@ import LoginPage from "./pages/auth/LoginPage";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import AdminCategoryPage from "./pages/admin/category/AdminCategoryPage";
 import EditProduct from "./pages/admin/Products/EditProduct";
+import ResetPassword from "./pages/auth/ResetPassword";
+import AddNewCategory from "./pages/admin/category/AddNewCategory";
+import SingleCategoryPage from "./pages/admin/category/SingleCategoryPage";
+import AdminBlogPage from "./pages/admin/blog/AdminBlogPage";
+import EditCategoryPage from "./pages/admin/category/EditCategoryPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -76,6 +81,22 @@ function App() {
           path: "category",
           element: <AdminCategoryPage />,
         },
+        {
+          path: "category/new",
+          element: <AddNewCategory />,
+        },
+        {
+          path: "category/:id",
+          element: <SingleCategoryPage />,
+        },
+        {
+          path: "category/:id/edit",
+          element: <EditCategoryPage />,
+        },
+        {
+          path: "blogs",
+          element: <AdminBlogPage />,
+        },
       ],
     },
     {
@@ -87,6 +108,10 @@ function App() {
         {
           path: "forgot-password",
           element: <ForgotPassword />,
+        },
+        {
+          path: "reset-password",
+          element: <ResetPassword />,
         },
       ],
     },

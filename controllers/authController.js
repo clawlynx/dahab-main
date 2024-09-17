@@ -1,7 +1,12 @@
-import { NotFoundError, UnauthenticatedError } from "../errors/customErrors.js";
+import {
+  BadRequestError,
+  NotFoundError,
+  UnauthenticatedError,
+} from "../errors/customErrors.js";
 import Admin from "../models/AdminModel.js";
 import { comparePassword, hashPassword } from "../utils/bcrypt.js";
 import { createJWT } from "../utils/jwtUtils.js";
+import { sendMail, transporter } from "../utils/nodemailer.js";
 
 export const registerAdmin = async (req, res) => {
   const hashedPassword = await hashPassword(req.body.password);
@@ -30,7 +35,7 @@ export const loginAdmin = async (req, res) => {
     expires: new Date(Date.now() + tenDay),
     secure: process.env.NODE_ENV === "production",
   });
-  res.status(200).json({ msg: "successfully logged out" });
+  res.status(200).json({ msg: "successfully logged in" });
 };
 
 export const logoutUser = async (req, res) => {
@@ -43,6 +48,43 @@ export const logoutUser = async (req, res) => {
 
 export const getUserInfo = async (req, res) => {
   const user = await Admin.findById(req.user.userId);
+  const userInfo = {
+    email: user.email,
+    username: user.username,
+  };
   if (!user) throw new NotFoundError("No user found");
-  res.status(200).json({ msg: "success", user });
+  res.status(200).json({ msg: "success", userInfo });
+};
+
+export const forgotPassword = async (req, res) => {
+  const user = await Admin.findOne({ email: req.body.email });
+  if (!user) throw new NotFoundError("No user found");
+  const code = Math.floor(100000 + Math.random() * 900000);
+  user.verificationCode = code.toString();
+  await user.save();
+  const mailOptions = {
+    from: {
+      name: "DAHAB MINERS ADMIN",
+      address: process.env.NODEMAILER_EMAIL,
+    },
+    to: user.email,
+    subject: "PASSWORD RESET",
+    text: `You have requested a password reset for your admin account on DAHAB MINERS. Your verification code is ${code}`,
+  };
+  await sendMail(transporter, mailOptions);
+  res.status(200).json({ msg: "success" });
+};
+
+export const resetPassword = async (req, res) => {
+  const user = await Admin.findOne({ email: req.body.email });
+  if (!user) throw new NotFoundError("No user found");
+  if (
+    user.verificationCode.toString() !== req.body.verificationCode.toString()
+  ) {
+    throw new BadRequestError("Invalid Registration code");
+  }
+  const newPassword = await hashPassword(req.body.password);
+  user.password = newPassword;
+  await user.save();
+  res.status(200).json({ msg: "success" });
 };

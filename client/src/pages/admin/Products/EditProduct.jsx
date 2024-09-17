@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FormInput from "../../../components/FormInput";
 import ProductImageUpload from "../../../components/Admin/Products/ProductImageUpload";
+import FormSelect from "../../../components/FormSelect";
 
 export default function EditProduct() {
   return (
@@ -18,6 +19,7 @@ export default function EditProduct() {
       <div className="my-10">
         <FormInput title={"Name"} type={"text"} placeholder={"Enter Name"} />
         <ProductImageUpload title={"Product Image"} />
+        <FormSelect title={"Category"} />
         <FormInput
           title={"HashRate (Th/s)"}
           type={"Number"}

@@ -38,3 +38,23 @@ export const validateLoginInput = withValidationErrors([
     .withMessage("Invalid Email format"),
   body("password").notEmpty().withMessage("Password is required"),
 ]);
+
+export const validateForgotPasswordInput = withValidationErrors([
+  body("email")
+    .notEmpty()
+    .withMessage("Email is required")
+    .isEmail()
+    .withMessage("Invalid Email format"),
+]);
+
+export const validateResetPasswordInput = withValidationErrors([
+  body("email")
+    .notEmpty()
+    .withMessage("Email is required")
+    .isEmail()
+    .withMessage("Invalid Email format"),
+  body("password").notEmpty().withMessage("Password is required"),
+  body("verificationCode")
+    .notEmpty()
+    .withMessage("verification code is required"),
+]);
