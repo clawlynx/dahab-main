@@ -21,8 +21,7 @@ export default function Header() {
         <NavLink to={"/buy"}>Buy Miners</NavLink>
         <NavLink to={"/host"}>Host Mining</NavLink>
         <NavLink to={"/repair"}>Miner Repair</NavLink>
-        {/* <NavLink to={"/why"}>Why choose us</NavLink>
-        <NavLink to={"/about"}>About us</NavLink> */}
+        <NavLink to={"/blogs"}>Blogs</NavLink>
       </div>
       <button
         className="bg-btnGreen hover:bg-btnHover nav-link text-white rounded-lg px-4 py-2 hidden lg:block"

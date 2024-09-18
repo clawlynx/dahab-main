@@ -6,7 +6,7 @@ export default function RepairSolutions() {
       <p className="text-base font-semibold text-[#1ECBAF] mt-10">
         Elevate Your ASIC Repair Expertise Today
       </p>
-      <h1 className="text-3xl lg:text-[40px] font-semibold gradient-heading shadow-[#1ECBAF] max-w-[768px] drop-shadow-2xl">
+      <h1 className="text-3xl lg:text-[40px] pb-5 font-semibold gradient-heading shadow-[#1ECBAF] max-w-[768px] drop-shadow-2xl">
         {" "}
         Unleash Your Potential with Comprehensive ASIC Repair Solutions
       </h1>

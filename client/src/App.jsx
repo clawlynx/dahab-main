@@ -21,6 +21,8 @@ import AddNewCategory from "./pages/admin/category/AddNewCategory";
 import SingleCategoryPage from "./pages/admin/category/SingleCategoryPage";
 import AdminBlogPage from "./pages/admin/blog/AdminBlogPage";
 import EditCategoryPage from "./pages/admin/category/EditCategoryPage";
+import BlogPage from "./pages/blogs/BlogPage";
+import SingleBlogPage from "./pages/blogs/SingleBlogPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -44,6 +46,14 @@ function App() {
         {
           path: "repair",
           element: <MinerRepairPage />,
+        },
+        {
+          path: "blogs",
+          element: <BlogPage />,
+        },
+        {
+          path: "blogs/:id",
+          element: <SingleBlogPage />,
         },
       ],
     },

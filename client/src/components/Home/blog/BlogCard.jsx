@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function BlogCard({ image, date, title, content }) {
   return (
@@ -10,9 +11,12 @@ export default function BlogCard({ image, date, title, content }) {
         <p className="font-semibold text-base text-btnGreen">{date}</p>
         <h3 className="text-lg font-semibold text-black">{title}</h3>
         <p className="text-lg font-normal text-gray-600">{content}</p>
-        <p className="text-lg font-semibold text-btnGreen underline">
+        <Link
+          to={"/blogs/1"}
+          className="text-lg font-semibold text-btnGreen underline"
+        >
           Read More
-        </p>
+        </Link>
       </div>
     </div>
   );
