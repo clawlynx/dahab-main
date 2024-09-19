@@ -6,12 +6,21 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { v2 as cloudinary } from "cloudinary";
 
 import errorHandlerMiddleware from "./middleware/errorHandleMiddleware.js";
 
 import authRouter from "./routes/authRouter.js";
+import adminProductRouter from "./routes/adminProductRouter.js";
+import { authenticateUser } from "./middleware/authMiddleware.js";
 
 const app = express();
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -29,6 +38,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/admin/auth", authRouter);
+app.use("/api/admin/product", authenticateUser, adminProductRouter);
 
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "Not Found" });

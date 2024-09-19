@@ -8,7 +8,13 @@ const ProductSchema = new Schema(
     productImage: {
       type: String,
     },
+    productImagePublicId: {
+      type: String,
+    },
     featuredImage: {
+      type: String,
+    },
+    featuredImagePublicId: {
       type: String,
     },
     hashRate: {
@@ -26,9 +32,11 @@ const ProductSchema = new Schema(
     price: {
       type: Number,
     },
-    category: {
-      type: mongoose.Types.ObjectId,
-      ref: "Category",
+    manufacturer: {
+      type: String,
+    },
+    cryptoCurrency: {
+      type: [String],
     },
   },
   {

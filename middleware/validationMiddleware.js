@@ -58,3 +58,24 @@ export const validateResetPasswordInput = withValidationErrors([
     .notEmpty()
     .withMessage("verification code is required"),
 ]);
+
+export const validateAddProductInput = withValidationErrors([
+  body("productName").notEmpty().withMessage("Product Name is required"),
+  body("hashRate").notEmpty().withMessage("Hash rate is required"),
+  body("power").notEmpty().withMessage("Power is required"),
+  body("algorithm").notEmpty().withMessage("Algorithm is required"),
+  body("description").notEmpty().withMessage("Description is required"),
+  body("price").notEmpty().withMessage("Price is required"),
+  body("manufacturerItem").notEmpty().withMessage("Manufacturer is required"),
+  body("cryptoCurrencyItem")
+    .notEmpty()
+    .withMessage("Crypto currency is required"),
+  body("productImage").notEmpty().withMessage("Product Image is required"),
+  body("productImagePublicId")
+    .notEmpty()
+    .withMessage("Error in product image upload. upload again"),
+  body("featuredImage").notEmpty().withMessage("Featured image is required"),
+  body("featuredImagePublicId")
+    .notEmpty()
+    .withMessage("Error in featured image upload. upload again"),
+]);
