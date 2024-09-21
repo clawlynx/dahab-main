@@ -38,6 +38,10 @@ const ProductSchema = new Schema(
     cryptoCurrency: {
       type: [String],
     },
+    isFeatured: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

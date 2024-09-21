@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function ProductHeader() {
+export default function ProductHeader({ img, name, price }) {
   return (
-    <div className="bg-blue-200 flex justify-between items-center p-5 rounded-lg">
+    <div className="bg-btnGreen flex justify-between items-center p-5 rounded-lg">
       <div className="flex gap-5 items-center">
         <img
-          src="/buycarousel.png"
+          src={img}
           className="w-52 h-52 rounded-lg overflow-hidden"
-          alt="productimage"
+          alt={name}
         />
         <div>
-          <h1 className="text-2xl font-semibold my-2">Antminer KS5</h1>
-          <p className="text-xl font-light">99 AED</p>
+          <h1 className="text-2xl font-semibold my-2">{name}</h1>
+          <p className="text-xl font-light">{price}</p>
         </div>
       </div>
       <Link

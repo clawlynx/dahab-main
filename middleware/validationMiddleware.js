@@ -1,6 +1,7 @@
-import { body, validationResult } from "express-validator";
+import { body, param, validationResult } from "express-validator";
 import { BadRequestError } from "../errors/customErrors.js";
 import Admin from "../models/AdminModel.js";
+import mongoose from "mongoose";
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -78,4 +79,11 @@ export const validateAddProductInput = withValidationErrors([
   body("featuredImagePublicId")
     .notEmpty()
     .withMessage("Error in featured image upload. upload again"),
+]);
+
+export const validateSingleAdminProductId = withValidationErrors([
+  param("id").custom(async (value, { req }) => {
+    const isValidMongoId = mongoose.Types.ObjectId.isValid(value);
+    if (!isValidMongoId) throw new BadRequestError("Invalid id");
+  }),
 ]);
