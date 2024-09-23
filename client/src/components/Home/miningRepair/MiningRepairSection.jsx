@@ -10,9 +10,9 @@ export default function MiningRepairSection() {
             <p className="text-base font-semibold text-homeBgGradient">
               Repair Miners
             </p>
-            <h1 className="text-[40px] font-semibold gradient-heading xl:max-w-[380px]">
+            <h4 className="text-[40px] font-semibold gradient-heading xl:max-w-[380px]">
               From Equipment to Maintenance : Your Complete Mining Partner
-            </h1>
+            </h4>
           </div>
           <p className="text-lg font-medium leading-7 xl:max-w-[400px]">
             Take your mining to the next level with our complete range of
@@ -29,10 +29,18 @@ export default function MiningRepairSection() {
         </div>
         <div className="flex 2xl:flex-row flex-col items-center justify-center gap-10">
           <div className="max-w-[600px] max-h-[400px] overflow-hidden rounded-lg">
-            <img src="/repair1.jpg"></img>
+            <img
+              src="/repair1.jpg"
+              alt="Expert-solutions-for-crypto-mining-in-abu-dhabi-UAE"
+              title="Dahab Miners is the premier crypto mining service in UAE Explore our Bitcoin machines in Abu Dhabi and maximize your cryptocurrency earnings!"
+            ></img>
           </div>
           <div className="max-w-[600px] max-h-[400px] overflow-hidden rounded-lg">
-            <img src="/repair2.jpg"></img>
+            <img
+              src="/repair2.jpg"
+              alt="Durable-and-robust-asic-miners-in-abu-dhabi-UAE"
+              title="Dahab Miners is the premier crypto mining service in UAE Explore our Bitcoin machines in Abu Dhabi and maximize your cryptocurrency earnings!"
+            ></img>
           </div>
         </div>
         <p className="text-center text-lg font-semibold">

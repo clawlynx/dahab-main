@@ -11,13 +11,17 @@ export default function BuyingCarousel({ setItem, item }) {
       <PgBar setItem={setItem} />
       <div className="flex lg:flex-row flex-col justify-between items-center pt-28 pb-10 overflow-hidden">
         <div className="flex flex-col lg:items-start items-center lg:text-left text-center max-w-[750px] gap-10 animate-slideInLeft -mt-20 z-20">
-          <h1 className="text-4xl md:text-5xl font-semibold text-btnGreen py-5">
-            Don’t settle for less.<br></br> Unleash unmatched power with our
-            premium crypto mining equipment.
-          </h1>
-          <h4 className="text-base font-light text-white leading-6 tracking-wider">
-            With expert support, your success is just a step away. Shop now
+          <h4 className="text-5xl leading-[60px] inline-block font-semibold text-btnGreen pt-5">
+            Unleash unmatched power with our premium crypto mining equipment.
           </h4>
+          <div>
+            <h2 className="text-base font-light text-white leading-6 tracking-wider">
+              <a href="https://dahabminers.ae/">Crypto Mining in UAE</a>
+            </h2>
+            <h4 className="text-base font-light text-white leading-6 tracking-wider">
+              With expert support, your success is just a step away. Shop now
+            </h4>
+          </div>
 
           <button
             className="text-base font-semibold text-white bg-btnGreen hover:bg-btnHover nav-link px-5 py-3 w-fit rounded-lg z-10"
@@ -34,11 +38,17 @@ export default function BuyingCarousel({ setItem, item }) {
           <img
             className="w-full h-full object-contain"
             src="/buycarousel.png"
-            alt="Home image"
+            alt="crypto-mining-machines-in-abu-dhabi-UAE-for-sale"
+            title="Dahab Miners is your trusted partner for crypto mining in UAE, offering a diverse array of advanced ASIC miners in Abu Dhabi. Discover our premium CRYPTO MINING MACHINES IN UAE and optimize your mining operations with the best tools available."
           />
         </div>
+
         <div className="absolute right-0 top-0 hidden lg:block overflow-hidden ">
-          <img src={svgbg}></img>
+          <img
+            src={svgbg}
+            alt="crypto-mining-machines-in-abu-dhabi-UAE-for-sale"
+            title="Dahab Miners is your trusted partner for crypto mining in UAE, offering a diverse array of advanced ASIC miners in Abu Dhabi. Discover our premium CRYPTO MINING MACHINES IN UAE and optimize your mining operations with the best tools available."
+          ></img>
         </div>
       </div>
     </>

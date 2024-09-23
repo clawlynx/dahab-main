@@ -12,13 +12,13 @@ const ContactForm = ({ popup }) => {
 
   return (
     <div className="px-3 xl:px-[120px] py-10 w-full flex flex-col gap-2 lg:gap-7">
-      <h1
+      <h5
         className={`font-semibold gradient-heading ${
           popup ? "text-xl" : "text-[40px] "
         }`}
       >
         Contact Us
-      </h1>
+      </h5>
       <div className="flex lg:flex-row flex-col gap-2 lg:gap-3 items-center w-full">
         <div className="flex flex-col gap-2 w-full">
           <label className="text-sm font-medium text-[#344054]">

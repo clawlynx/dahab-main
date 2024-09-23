@@ -12,7 +12,7 @@ const sortOptions = [
   "Bearscore: Low-High",
 ];
 
-export default function BestSellingProducts() {
+export default function BestSellingProducts({ products }) {
   const [sortby, setSortBy] = useState("Popularity");
   const [showSortDrop, setShowSortDrop] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
@@ -68,9 +68,15 @@ export default function BestSellingProducts() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
-        {Array.from({ length: 9 }).map((_, index) => (
-          <ProductCard key={index} />
-        ))}
+        {products?.length > 0 &&
+          products.map((x) => (
+            <ProductCard
+              key={x._id}
+              img={x.productImage}
+              name={x.productName}
+              price={x.price}
+            />
+          ))}
       </div>
     </div>
   );

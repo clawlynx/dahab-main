@@ -12,6 +12,7 @@ import errorHandlerMiddleware from "./middleware/errorHandleMiddleware.js";
 
 import authRouter from "./routes/authRouter.js";
 import adminProductRouter from "./routes/adminProductRouter.js";
+import userProductRouter from "./routes/userProductRouter.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
 
 const app = express();
@@ -39,6 +40,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/admin/auth", authRouter);
 app.use("/api/admin/product", authenticateUser, adminProductRouter);
+app.use("/api/users/product", userProductRouter);
 
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "Not Found" });

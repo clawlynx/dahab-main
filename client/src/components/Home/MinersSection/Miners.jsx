@@ -11,7 +11,7 @@ export default function Miners() {
       <div className="text-center">
         <p className="text-base font-semibold text-btnGreen py-5">Miners</p>
         <h1 className="text-[40px] font-semibold gradient-heading mb-5">
-          Affordable Crypto Mining Solutions
+          <a href="https://dahabminers.ae/">Crypto Mining Machines in UAE</a>
         </h1>
         <button
           className="px-3 py-2 my-5 rounded-lg text-base font-semibold border hover:bg-gray-300 nav-link border-gray-300"
@@ -24,12 +24,13 @@ export default function Miners() {
         <div className="w-full max-w-[400px] h-auto md:max-w-[350px] overflow-hidden">
           <img
             src="/antiminer ks5.jpeg"
-            alt="Antiminer KS5"
+            alt="Find-top-asic-miner-models-in-abu-dhabi-UAE-here"
+            title="Dahab Miners is your trusted partner for crypto mining in UAE, offering a diverse array of advanced ASIC miners in Abu Dhabi. Discover our premium CRYPTO MINING MACHINES IN UAE and optimize your mining operations with the best tools available."
             className="w-full h-auto object-cover"
           />
         </div>
         <div className="max-w-[488px] flex flex-col gap-7">
-          <h1 className="text-2xl font-semibold">Buy Antminer KS5 (20Th)</h1>
+          <h4 className="text-2xl font-semibold">Buy Antminer KS5 (20Th)</h4>
           <p className="text-base font-normal">
             The Bitmain Antminer KS5 (20Th) is a high-performance Bitcoin miner
             known for its efficiency and reliability. It delivers 20 tetrahashes
@@ -65,9 +66,9 @@ export default function Miners() {
             >
               Buy Now
             </button>
-            <h1 className="text-btnGreen underline" onClick={handleChatClick}>
+            <h4 className="text-btnGreen underline" onClick={handleChatClick}>
               View Specifications
-            </h1>
+            </h4>
           </div>
         </div>
       </div>

@@ -14,7 +14,11 @@ export default function Header() {
         className="w-36 h-14 mt-5"
         onClick={() => window.scrollTo(0, 0)}
       >
-        <img src="/mainlogo.png"></img>
+        <img
+          src="/mainlogo.png"
+          alt="Special-offers-on-crypto-mining-machines-in-abu-dhabi-UAE"
+          title="Explore top-tier CRYPTO MINING MACHINES IN UAE at Dahab Miners. Specializing in high-efficiency ASIC miners in Abu Dhabi, UAE, we offer the best solutions for crypto mining in UAE. Browse our range today and enhance your mining setup!"
+        ></img>
       </Link>
       <div className="lg:flex gap-5 xl:gap-14 text-sm xl:text-base font-medium hidden">
         <NavLink to={"/"}>Home</NavLink>

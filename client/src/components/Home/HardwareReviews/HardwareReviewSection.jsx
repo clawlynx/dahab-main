@@ -11,9 +11,9 @@ export default function HardwareReviewSection() {
     <div className="bg-homeBg px-5 md:px-10 lg:px-[120px] py-10 pt-20">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
         <div className="text-white flex flex-col gap-5 lg:col-span-2">
-          <h1 className="text-[40px] font-semibold gradient-heading max-w-[680px]">
+          <h4 className="text-[40px] font-semibold gradient-heading max-w-[680px]">
             Why you should buy your mining hardware from DAHAB miners
-          </h1>
+          </h4>
           {/* <p className="text-5xl font-medium">4.9/5</p>
           <div className="flex gap-3 items-center">
             <div className="flex gap-1 text-amber-500">

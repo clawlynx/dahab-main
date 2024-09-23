@@ -27,11 +27,11 @@ export default function ProgressBar({ host, repair }) {
         ></div>
       </div>
       <div className="flex justify-evenly w-full font-semibold text-xl py-3 text-homeBg">
-        <h1 className="text-btnGreen">Buy</h1>
-        <h1 className={`ml-5 ${host || repair ? "text-btnGreen" : ""}`}>
+        <h4 className="text-btnGreen">Buy</h4>
+        <h4 className={`ml-5 ${host || repair ? "text-btnGreen" : ""}`}>
           Host
-        </h1>
-        <h1 className={`${repair && "text-btnGreen"}`}>Repair</h1>
+        </h4>
+        <h4 className={`${repair && "text-btnGreen"}`}>Repair</h4>
       </div>
     </div>
   );

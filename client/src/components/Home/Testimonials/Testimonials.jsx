@@ -54,9 +54,9 @@ export default function Testimonials() {
       <h4 className="text-base font-semibold text-btnGreen text-center">
         Testimonials
       </h4>
-      <h1 className="text-[40px] font-semibold gradient-heading text-center">
+      <h4 className="text-[40px] font-semibold gradient-heading text-center">
         What our customers say about us
-      </h1>
+      </h4>
       <Slider {...settings} className="my-10">
         {testimonials.map((x, index) => (
           <div key={index} className="px-2">

@@ -3,29 +3,31 @@ import { CiSearch } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
-
-const manufacturer = [
-  "manufacturer name",
-  "manufacturer name",
-  "manufacturer name",
-  "manufacturer name",
-  "manufacturer name",
-  "manufacturer name",
-  "manufacturer name",
-];
-const crypto = [
-  "cryptocurrency name",
-  "cryptocurrency name",
-  "cryptocurrency name",
-  "cryptocurrency name",
-  "cryptocurrency name",
-  "cryptocurrency name",
-  "cryptocurrency name",
-];
+import { cryptoCurrency, manufacturer } from "../../utils/dropdowns";
 
 export default function SearchAndFilter({ setShowFilter }) {
   const [showMfgDrop, setShowMfgDrop] = useState(false);
   const [showCryptoDrop, setShowCryptoDrop] = useState(false);
+  const [manufacturerOptions, setManufacturerOptions] = useState([]);
+  const [cryptoCurrencyOption, setCryptoCurrencyOption] = useState([]);
+
+  const handleManufacturerOptions = (e) => {
+    const value = e.target.value;
+    if (e.target.checked) {
+      setManufacturerOptions((prev) => [...prev, value]);
+    } else {
+      setManufacturerOptions((prev) => prev.filter((item) => item !== value));
+    }
+  };
+
+  const handleCryptoChange = (e) => {
+    const value = e.target.value;
+    if (e.target.checked) {
+      setCryptoCurrencyOption((prev) => [...prev, value]);
+    } else {
+      setCryptoCurrencyOption((prev) => prev.filter((item) => item !== value));
+    }
+  };
   return (
     <div className="lg:w-72 w-full rounded-xl px-2 py-5 flex flex-col gap-5">
       <div className="w-full flex justify-between items-center mb-10">
@@ -66,7 +68,13 @@ export default function SearchAndFilter({ setShowFilter }) {
               key={index}
               className="flex gap-3 items-center text-base font-medium text-[#667085] animate-slideInTop"
             >
-              <input type="checkbox" className="" />
+              <input
+                type="checkbox"
+                value={x}
+                checked={manufacturerOptions.includes(x)}
+                onChange={handleManufacturerOptions}
+                className=""
+              />
               <label>{x}</label>
             </div>
           ))}
@@ -86,12 +94,18 @@ export default function SearchAndFilter({ setShowFilter }) {
           </p>
         </div>
         {showCryptoDrop &&
-          crypto.map((x, index) => (
+          cryptoCurrency.map((x, index) => (
             <div
               key={index}
               className="flex gap-3 items-center text-base font-medium text-[#667085] animate-slideInTop"
             >
-              <input type="checkbox" className="" />
+              <input
+                type="checkbox"
+                value={x}
+                checked={cryptoCurrencyOption.includes(x)}
+                onChange={handleCryptoChange}
+                className=""
+              />
               <label>{x}</label>
             </div>
           ))}

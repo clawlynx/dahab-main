@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import ProductListItem from "../../../components/Admin/Products/ProductListItem";
@@ -9,6 +9,12 @@ import Loading from "../../../components/Loading";
 export default function AdminProductPage() {
   const [keyWord, setKeyWord] = useState("");
   const { loading, allProducts, refetch } = useGetAllAdminProducts({ keyWord });
+
+  useEffect(() => {
+    if (keyWord === "") {
+      refetch();
+    }
+  }, [keyWord]);
   return (
     <div>
       <div className="flex justify-end">
@@ -41,7 +47,12 @@ export default function AdminProductPage() {
             >
               <FaSearch />
             </button>
-            <button className="p-2 bg-homeBg text-white rounded-lg hover:bg-homeBgGradient nav-link">
+            <button
+              className="p-2 bg-homeBg text-white rounded-lg hover:bg-homeBgGradient nav-link"
+              onClick={() => {
+                setKeyWord("");
+              }}
+            >
               Clear
             </button>
           </div>

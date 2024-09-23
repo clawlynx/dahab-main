@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function BlogCard({ image, date, title, content }) {
+export default function BlogCard({ image, date, title, content, alt, desc }) {
   return (
     <div className="max-w-96 p-2 rounded-lg shadow-sm border">
       <div className="rounded-lg overflow-hidden mb-5">
-        <img src={image}></img>
+        <img src={image} alt={alt} title={desc}></img>
       </div>
       <div className="flex flex-col gap-5 ">
         <p className="font-semibold text-base text-btnGreen">{date}</p>

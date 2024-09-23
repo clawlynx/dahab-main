@@ -15,9 +15,14 @@ export default function CryptoCurrencySection() {
         <p className="text-base font-semibold text-homeBgGradient">
           Unlock the potential of crypto
         </p>
-        <h1 className="text-5xl font-semibold gradient-heading">
-          Explore the future of cryptocurrency
-        </h1>
+        <div>
+          <h4 className="text-5xl pb-3 font-semibold gradient-heading">
+            Explore the future of cryptocurrency
+          </h4>
+          <h3 className="text-base font-semibold text-homeBgGradient">
+            <a href="https://dahabminers.ae/">Crypto Mining in UAE</a>
+          </h3>
+        </div>
         <p className="text-lg font-medium text-white leading-7">
           Discover Bitcoin, Ethereum, and Kaspa with our top-tier selection.
           Invest, trade or mine securely and innovatively. Start your journey
@@ -32,7 +37,11 @@ export default function CryptoCurrencySection() {
       </div>
       <div>
         <div className="max-w-[590px] max-h-[645px] overflow-hidden">
-          <img src={crypto}></img>
+          <img
+            src={crypto}
+            alt="Explore-the-potential-of-crypto-mining-in-abu-dhabi-UAE"
+            title="Dahab Miners is the premier crypto mining service in UAE Explore our Bitcoin machines in Abu Dhabi and maximize your cryptocurrency earnings!"
+          ></img>
         </div>
       </div>
     </div>
