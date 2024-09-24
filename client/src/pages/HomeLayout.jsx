@@ -15,7 +15,7 @@ export default function HomeLayout() {
 
         <EnquireButton />
       </div>
-      <div className="" onClick={() => setShowPopup(false)}>
+      <div className="">
         <Outlet />
         <Footer />
       </div>

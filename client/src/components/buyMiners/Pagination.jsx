@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { GrFormNextLink } from "react-icons/gr";
 
-export default function Pagination() {
-  const [totalPage, setTotalPage] = useState(100);
-  const [currentPage, setCurrentPage] = useState(1);
+export default function Pagination({
+  totalPage,
+  setTotalPage,
+  currentPage,
+  setCurrentPage,
+}) {
   function next() {
     setCurrentPage(currentPage + 1);
   }

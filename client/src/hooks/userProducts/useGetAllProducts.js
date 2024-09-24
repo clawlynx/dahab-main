@@ -2,19 +2,34 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../utils/constants";
 
-const useGetAllProducts = () => {
+const useGetAllProducts = ({
+  keyWord,
+  cryptoCurrencyOption,
+  manufacturerOptions,
+  sortby,
+  currentPage,
+}) => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
+  const [pages, setPages] = useState(0);
 
   const getAllProducts = async () => {
     setLoading(true);
     try {
       const res = await axios.get(`${BASE_URL}/users/product`, {
+        params: {
+          keyWord,
+          cryptoCurrencyOption,
+          manufacturerOptions,
+          sortby,
+          currentPage,
+        },
         withCredentials: true,
       });
       const data = res.data;
       if (data.msg === "success") {
         setProducts(data.products);
+        setPages(data.numOfPages);
       } else {
         console.log(data.msg);
       }
@@ -34,7 +49,7 @@ const useGetAllProducts = () => {
     getAllProducts();
   };
 
-  return { loading, refetch, products };
+  return { loading, refetch, products, pages };
 };
 
 export default useGetAllProducts;
