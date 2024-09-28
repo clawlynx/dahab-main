@@ -6,12 +6,17 @@ import Pagination from "./Pagination";
 import useGetAllProducts from "../../hooks/userProducts/useGetAllProducts";
 import Loading from "../Loading";
 import { useSelector } from "react-redux";
+import useGetFeaturedProducts from "../../hooks/userProducts/useGetFeaturedProducts";
 
 export default function BuyMinersSection() {
   const { manufacturerOptions, cryptoCurrencyOption, keyWord, sortby } =
     useSelector((state) => state.userProductSearch);
   const [totalPage, setTotalPage] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
+  const { loading: featuredLoading, products: featuredProducts } =
+    useGetFeaturedProducts();
+  console.log(featuredProducts);
+
   const { loading, refetch, products, pages } = useGetAllProducts({
     keyWord,
     cryptoCurrencyOption,
@@ -58,19 +63,23 @@ export default function BuyMinersSection() {
         <h1 className="text-base lg:text-4xl font-semibold lg:text-black text-white text-center">
           Top Rated Products
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10">
-          {products?.length > 0 &&
-            products
-              .slice(0, 4)
-              .map((x) => (
-                <ProductCard
-                  key={x._id}
-                  name={x.productName}
-                  img={x.productImage}
-                  price={x.price}
-                />
-              ))}
-        </div>
+        {featuredLoading ? (
+          <Loading />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10">
+            {featuredProducts?.length > 0 &&
+              featuredProducts
+                .slice(0, 4)
+                .map((x) => (
+                  <ProductCard
+                    key={x._id}
+                    name={x.productName}
+                    img={x.productImage}
+                    price={x.price}
+                  />
+                ))}
+          </div>
+        )}
       </div>
     </div>
   );

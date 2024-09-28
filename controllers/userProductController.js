@@ -38,3 +38,9 @@ export const getAllUserProducts = async (req, res) => {
     .status(200)
     .json({ msg: "success", products, totalProducts, page, numOfPages });
 };
+
+export const getFeaturedProducts = async (req, res) => {
+  const products = await Product.find({ isFeatured: true });
+  if (!products) throw new NotFoundError("No products found");
+  res.status(200).json({ msg: "success", products });
+};
