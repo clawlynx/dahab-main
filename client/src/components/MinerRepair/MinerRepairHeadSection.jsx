@@ -1,6 +1,7 @@
 import React from "react";
 import bg from "../../assets/minerRepair.svg";
-export default function MinerRepairHeadSection() {
+
+export default function MinerRepairHeadSection({ scrollfunction }) {
   return (
     <div
       className="px-5 md:px-10 xl:px-[120px] py-10 bg-no-repeat bg-center min-h-[640px] bg-homeBg flex justify-center items-center"
@@ -19,7 +20,10 @@ export default function MinerRepairHeadSection() {
           Repairs for Optimal Performance and Minimal Downtime. Count on Us to
           Bring Your ASIC Miners Back Online Efficiently and Effectively.
         </p>
-        <button className="text-lg font-semibold bg-[#1ECBAF] px-10 py-3 text-white rounded-lg hover:bg-btnHover nav-link">
+        <button
+          onClick={scrollfunction}
+          className="text-lg font-semibold bg-[#1ECBAF] px-10 py-3 text-white rounded-lg hover:bg-btnHover nav-link"
+        >
           View Pricing
         </button>
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import MinerRepairHeadSection from "../../components/MinerRepair/MinerRepairHeadSection";
 import RepairFeatures from "../../components/MinerRepair/RepairFeatures";
 import BuyBox from "../../components/HostMining/BuyBox";
@@ -10,12 +10,17 @@ export default function MinerRepairPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const selectedRef = useRef(null);
+  const scrollToView = () => {
+    selectedRef.current?.scrollIntoView({ behaviour: "smooth" });
+  };
   return (
     <div>
-      <MinerRepairHeadSection />
-      <RepairFeatures />
+      <MinerRepairHeadSection scrollfunction={scrollToView} />
+      <RepairFeatures scrollfunction={scrollToView} />
       <BuyBox />
-      <PriceSection />
+      <PriceSection ref={selectedRef} />
       <RepairSolutions />
       <FAQ />
     </div>

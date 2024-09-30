@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef, useRef } from "react";
 import PriceTable from "./PriceTable";
 
-export default function PriceSection() {
+const PriceSection = forwardRef((props, ref) => {
   return (
-    <div className="px-5 md:px-10 xl:px-[120px] py-10 w-full">
+    <div ref={ref} className="px-5 md:px-10 xl:px-[120px] py-10 w-full">
       <div className="flex flex-col gap-10 justify-center items-center">
         <h1 className="text-3xl lg:text-[40px] pb-5 font-semibold gradient-heading max-w-[860px] text-center">
           Reliable ASIC Maintenance and Repair Services at Competitive Prices
@@ -21,4 +21,6 @@ export default function PriceSection() {
       <PriceTable />
     </div>
   );
-}
+});
+
+export default PriceSection;

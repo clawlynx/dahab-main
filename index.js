@@ -13,6 +13,7 @@ import errorHandlerMiddleware from "./middleware/errorHandleMiddleware.js";
 import authRouter from "./routes/authRouter.js";
 import adminProductRouter from "./routes/adminProductRouter.js";
 import userProductRouter from "./routes/userProductRouter.js";
+import adminBlogRouter from "./routes/adminBlogRouter.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
 
 const app = express();
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/admin/auth", authRouter);
 app.use("/api/admin/product", authenticateUser, adminProductRouter);
+app.use("/api/admin/blogs", authenticateUser, adminBlogRouter);
 app.use("/api/users/product", userProductRouter);
 
 app.use("*", (req, res) => {

@@ -14,15 +14,13 @@ import SingleProductPage from "./pages/admin/Products/SingleProductPage";
 import AuthLayout from "./pages/auth/AuthLayout";
 import LoginPage from "./pages/auth/LoginPage";
 import ForgotPassword from "./pages/auth/ForgotPassword";
-import AdminCategoryPage from "./pages/admin/category/AdminCategoryPage";
 import EditProduct from "./pages/admin/Products/EditProduct";
 import ResetPassword from "./pages/auth/ResetPassword";
-import AddNewCategory from "./pages/admin/category/AddNewCategory";
-import SingleCategoryPage from "./pages/admin/category/SingleCategoryPage";
 import AdminBlogPage from "./pages/admin/blog/AdminBlogPage";
-import EditCategoryPage from "./pages/admin/category/EditCategoryPage";
 import BlogPage from "./pages/blogs/BlogPage";
 import SingleBlogPage from "./pages/blogs/SingleBlogPage";
+import AddNewBlog from "./pages/admin/blog/AddNewBlog";
+import AdminSingleBlogPage from "./pages/admin/blog/AdminSingleBlogPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -78,7 +76,6 @@ function App() {
           path: "products/new",
           element: <AddNewProduct />,
         },
-
         {
           path: "products/:id",
           element: <SingleProductPage />,
@@ -88,24 +85,16 @@ function App() {
           element: <EditProduct />,
         },
         {
-          path: "category",
-          element: <AdminCategoryPage />,
-        },
-        {
-          path: "category/new",
-          element: <AddNewCategory />,
-        },
-        {
-          path: "category/:id",
-          element: <SingleCategoryPage />,
-        },
-        {
-          path: "category/:id/edit",
-          element: <EditCategoryPage />,
-        },
-        {
           path: "blogs",
           element: <AdminBlogPage />,
+        },
+        {
+          path: "blogs/new",
+          element: <AddNewBlog />,
+        },
+        {
+          path: "blogs/:id",
+          element: <AdminSingleBlogPage />,
         },
       ],
     },

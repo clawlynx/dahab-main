@@ -87,3 +87,12 @@ export const validateSingleAdminProductId = withValidationErrors([
     if (!isValidMongoId) throw new BadRequestError("Invalid id");
   }),
 ]);
+
+export const validateBlogInput = withValidationErrors([
+  body("title").notEmpty().withMessage("Title is required"),
+  body("blogImage").notEmpty().withMessage("Blog Image is required"),
+  body("blogImagePublicId")
+    .notEmpty()
+    .withMessage("Error in image upload. try again"),
+  body("content").notEmpty().withMessage("Content is required"),
+]);

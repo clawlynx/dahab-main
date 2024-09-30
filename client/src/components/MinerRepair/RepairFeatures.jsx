@@ -1,7 +1,7 @@
 import React from "react";
 import FeatureCard from "./FeatureCard";
 
-export default function RepairFeatures() {
+export default function RepairFeatures({ scrollfunction }) {
   return (
     <div className="bg-gradient-to-t from-[#2558B0] to-homeBg px-5 md:px-10 xl:px-[120px] py-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-10">
@@ -25,7 +25,10 @@ export default function RepairFeatures() {
         />
       </div>
       <div className="flex justify-center my-10">
-        <button className="text-lg font-semibold bg-[#1ECBAF] px-10 py-3 text-white rounded-lg hover:bg-btnHover nav-link">
+        <button
+          onClick={scrollfunction}
+          className="text-lg font-semibold bg-[#1ECBAF] px-10 py-3 text-white rounded-lg hover:bg-btnHover nav-link"
+        >
           View Pricing
         </button>
       </div>

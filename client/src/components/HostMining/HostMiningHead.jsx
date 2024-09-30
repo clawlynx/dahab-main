@@ -3,6 +3,7 @@ import bg from "../../assets/hostminer.svg";
 import { AiOutlineEuro } from "react-icons/ai";
 import { TbCurrencyEuro } from "react-icons/tb";
 import { FaLeaf } from "react-icons/fa";
+import { handleChatClick } from "../../utils/whatsapp";
 export default function HostMiningHead() {
   return (
     <div
@@ -20,7 +21,10 @@ export default function HostMiningHead() {
           provides the best and most affordable options in our modern hosting
           farms.
         </p>
-        <button className="text-base font-semibold px-4 py-3 bg-btnGreen w-fit hover:bg-btnHover nav-link rounded-lg text-white">
+        <button
+          onClick={handleChatClick}
+          className="text-base font-semibold px-4 py-3 bg-btnGreen w-fit hover:bg-btnHover nav-link rounded-lg text-white"
+        >
           View Prices
         </button>
       </div>
