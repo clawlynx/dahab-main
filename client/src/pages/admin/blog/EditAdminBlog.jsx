@@ -1,35 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import { Link, useParams } from "react-router-dom";
+import useGetSingleBlog from "../../../hooks/adminBlogs/useGetSingleBlog";
+import Loading from "../../../components/Loading";
 import FormInput from "../../../components/FormInput";
 import ProductImageUpload from "../../../components/Admin/Products/ProductImageUpload";
-import useUploadBlogImage from "../../../hooks/adminBlogs/useUploadBlogImage";
-import Loading from "../../../components/Loading";
-import useAddBlog from "../../../hooks/adminBlogs/useAddBlog";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import useUpdateBlogImage from "../../../hooks/adminBlogs/useUpdateBlogImage";
+import useEditBlog from "../../../hooks/adminBlogs/useEditBlog";
 
-export default function AddNewBlog() {
+export default function EditAdminBlog() {
+  const { id } = useParams();
+  const { loading, blog } = useGetSingleBlog({ id });
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
   const [blogImage, setBlogImage] = useState("");
   const [blogImageId, setBlogImageId] = useState("");
+  const {
+    loading: imageLoading,
+    details,
+    updateBlogImage,
+  } = useUpdateBlogImage();
+  const { loading: editLoading, editBlog } = useEditBlog();
 
-  const { loading, uploadBlogImage, details } = useUploadBlogImage();
-  const { loading: blogLoading, addBlog } = useAddBlog();
+  useEffect(() => {
+    if (blog) {
+      setContent(blog.content);
+      setTitle(blog.title);
+      setBlogImage(blog.blogImage);
+      setBlogImageId(blog.blogImagePublicId);
+    }
+  }, [blog]);
 
   useEffect(() => {
     if (details) {
       setBlogImage(details.blogImage);
       setBlogImageId(details.blogImagePublicId);
     }
-  }, [details, loading]);
+  }, [details, imageLoading]);
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div>
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl">Add Blog</h1>
+        <h1 className="text-2xl">Edit Blog</h1>
         <Link
-          to={"/admin/blogs"}
+          to={`/admin/blogs/${id}`}
           className="bg-homeBg p-2 rounded-lg text-white hover:bg-blue-500 nav-link"
         >
           Go Back
@@ -46,9 +63,9 @@ export default function AddNewBlog() {
         <div className="flex gap-2 items-end">
           <ProductImageUpload
             title={"Blog Image"}
-            changeFunction={(e) => uploadBlogImage(e)}
+            changeFunction={(e) => updateBlogImage({ e, id })}
           />
-          {loading && <Loading />}
+          {imageLoading && <Loading />}
           {blogImage && (
             <div className="w-20 h-20 pb-5 rounded-lg overflow-hidden">
               <img src={blogImage} className="object-contain"></img>
@@ -63,19 +80,20 @@ export default function AddNewBlog() {
         />
         <button
           onClick={() =>
-            addBlog({
+            editBlog({
               title,
               blogImage,
               blogImagePublicId: blogImageId,
               content,
+              id,
             })
           }
           className="bg-homeBg p-2 my-5 rounded-lg text-white hover:bg-blue-500 nav-link"
-          disabled={blogLoading}
+          disabled={editLoading}
         >
           Save Blog
         </button>
-        {blogLoading && <Loading />}
+        {editLoading && <Loading />}
       </div>
     </div>
   );

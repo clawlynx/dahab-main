@@ -21,6 +21,7 @@ import BlogPage from "./pages/blogs/BlogPage";
 import SingleBlogPage from "./pages/blogs/SingleBlogPage";
 import AddNewBlog from "./pages/admin/blog/AddNewBlog";
 import AdminSingleBlogPage from "./pages/admin/blog/AdminSingleBlogPage";
+import EditAdminBlog from "./pages/admin/blog/EditAdminBlog";
 
 function App() {
   const router = createBrowserRouter([
@@ -95,6 +96,10 @@ function App() {
         {
           path: "blogs/:id",
           element: <AdminSingleBlogPage />,
+        },
+        {
+          path: "blogs/:id/edit",
+          element: <EditAdminBlog />,
         },
       ],
     },

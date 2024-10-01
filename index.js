@@ -14,6 +14,7 @@ import authRouter from "./routes/authRouter.js";
 import adminProductRouter from "./routes/adminProductRouter.js";
 import userProductRouter from "./routes/userProductRouter.js";
 import adminBlogRouter from "./routes/adminBlogRouter.js";
+import userBlogRouter from "./routes/userBlogRouter.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
 
 const app = express();
@@ -43,6 +44,7 @@ app.use("/api/admin/auth", authRouter);
 app.use("/api/admin/product", authenticateUser, adminProductRouter);
 app.use("/api/admin/blogs", authenticateUser, adminBlogRouter);
 app.use("/api/users/product", userProductRouter);
+app.use("/api/users/blogs", userBlogRouter);
 
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "Not Found" });
