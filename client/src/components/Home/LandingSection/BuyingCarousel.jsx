@@ -19,6 +19,10 @@ export default function BuyingCarousel({ setItem, item }) {
               <a href="https://dahabminers.ae/">Crypto Mining in UAE</a>
             </h2>
             <h4 className="text-base font-light text-white leading-6 tracking-wider">
+              Buy a crypto mining machine today and step into the future of
+              crypto mining.
+            </h4>
+            <h4 className="text-base font-light text-white leading-6 tracking-wider">
               With expert support, your success is just a step away. Shop now
             </h4>
           </div>

@@ -20,9 +20,12 @@ export default function RequestHostingSection() {
           />
           <RequestHostingContactCard
             icon={<MdMailOutline />}
-            content={"email@gamil.com"}
+            content={"Rizwan@dahabminers.ae"}
           />
-          <RequestHostingContactCard icon={<LuPhone />} content={"056848425"} />
+          <RequestHostingContactCard
+            icon={<LuPhone />}
+            content={"+971568145866"}
+          />
         </div>
       </div>
     </div>

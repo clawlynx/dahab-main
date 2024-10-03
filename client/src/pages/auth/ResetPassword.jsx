@@ -10,7 +10,7 @@ export default function ResetPassword() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const { loading, resetPassword } = useResetPassword();
   return (
-    <div className="bg-white p-5 rounded-lg w-1/3 flex flex-col items-center">
+    <div className="bg-white p-5 rounded-lg md:w-1/3 w-11/12 flex flex-col items-center">
       <h1 className="text-xl font-semibold ">Enter new Password</h1>
       <div className="w-full my-5">
         <FormInput

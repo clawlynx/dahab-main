@@ -20,7 +20,8 @@ export default function RepairCarousel({ setItem, item }) {
           </div>
           <h4 className="text-base font-light text-white leading-6 tracking-wider">
             Get your crypto mining gear back in action fast. Optimise your
-            mining operations with our rapid repair & maintenance service.
+            cryptocurrency mining machine operations with our rapid repair &
+            maintenance service.
             <br></br>
             Ensure expert care for your equipment.
           </h4>

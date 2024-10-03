@@ -11,7 +11,7 @@ export default function MiningFacilitiesSection() {
               Host Mining
             </h4>
             <h3 className="text-base font-semibold text-btnGreen">
-              <a href="https://dahabminers.ae/">ASIC Miner in Abu Dhabi ,UAE</a>
+              <a href="https://dahabminers.ae/">ASIC Miner in Abu Dhabi, UAE</a>
             </h3>
           </div>
 
@@ -20,8 +20,8 @@ export default function MiningFacilitiesSection() {
           </h5>
           <p className="text-lg font-medium leading-7">
             Our mining farms provide the most modern and secure locations for
-            your ASIC miners, ensuring optimal infrastucture conditions for peak
-            performance
+            your ASIC miners and crypto mining machine in UAE, ensuring optimal
+            infrastucture conditions for peak performance
           </p>
           <button
             className="text-base w-fit font-semibold text-white px-4 py-2 rounded-lg bg-btnGreen hover:bg-btnHover nav-link"

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function ProductListItem({ img, name, id }) {
   return (
-    <div className=" flex justify-between px-10 items-center bg-homeBgGradient rounded-lg my-2 p-3 text-white">
+    <div className=" flex justify-between md:px-10 px-1 items-center bg-homeBgGradient rounded-lg my-2 p-3 text-white">
       <div className="flex gap-3 items-center">
         <img
-          className="w-10 h-10 rounded-md overflow-hidden"
+          className="w-10 h-10 rounded-md hidden md:block overflow-hidden"
           src={img}
           alt={name}
         ></img>

@@ -44,11 +44,12 @@ function SampleNextArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
+
         background: "#6FC6B8",
         padding: "5px",
         width: "30px",
         height: "30px",
+        marginRight: "20px",
         borderRadius: "100%",
         display: "flex",
         justifyContent: "center",
@@ -67,13 +68,14 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
+
         background: "#6FC6B8",
         padding: "5px",
         width: "30px",
         height: "30px",
         borderRadius: "100%",
         display: "flex",
+        marginLeft: "20px",
         justifyContent: "center",
         alignItems: "center",
       }}

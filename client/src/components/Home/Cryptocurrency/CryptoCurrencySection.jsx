@@ -2,6 +2,7 @@ import React from "react";
 import crypto from "../../../assets/crypto.svg";
 import bg from "../../../assets/cryptobg.svg";
 import { handleChatClick } from "../../../utils/whatsapp";
+import { Link } from "react-router-dom";
 export default function CryptoCurrencySection() {
   return (
     <div
@@ -28,12 +29,12 @@ export default function CryptoCurrencySection() {
           Invest, trade or mine securely and innovatively. Start your journey
           with us and shape the future of finance today.
         </p>
-        <button
+        <Link
+          to={"/buy"}
           className="px-4 py-2 mb-4 bg-btnGreen text-white text-base font-semibold rounded-lg w-fit hover:bg-btnHover nav-link"
-          onClick={handleChatClick}
         >
           View Products
-        </button>
+        </Link>
       </div>
       <div>
         <div className="max-w-[590px] max-h-[645px] overflow-hidden">

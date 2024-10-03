@@ -18,7 +18,10 @@ export default function BlogCard({
   id,
 }) {
   return (
-    <div className="max-w-96 p-2 rounded-lg shadow-sm border">
+    <Link
+      to={`/blogs/${id}`}
+      className="max-w-96 p-2 rounded-lg shadow-sm border"
+    >
       <div className="rounded-lg overflow-hidden mb-5">
         <img src={image} alt={alt} title={desc}></img>
       </div>
@@ -36,6 +39,6 @@ export default function BlogCard({
           Read More
         </Link>
       </div>
-    </div>
+    </Link>
   );
 }

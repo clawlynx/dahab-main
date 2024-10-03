@@ -16,7 +16,7 @@ function HostingCarousel({ setItem, item }) {
           <h4 className="text-base font-light text-white leading-6 tracking-wider">
             Need a top-notch hosting location for your ASIC miners?. DAHAB
             Miners provides the best and most affordable options in our modern
-            hosting farms.
+            hosting farms for your Bitcoin mining machine in UAE
           </h4>
           <button
             className="text-base font-semibold text-white bg-btnGreen hover:bg-btnHover nav-link px-5 py-3 w-fit rounded-lg"

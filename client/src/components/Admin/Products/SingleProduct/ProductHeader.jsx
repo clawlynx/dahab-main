@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function ProductHeader({ img, name, price }) {
   return (
-    <div className="bg-btnGreen flex justify-between items-center p-5 rounded-lg">
-      <div className="flex gap-5 items-center">
+    <div className="bg-btnGreen flex md:flex-row flex-col justify-between items-center p-5 rounded-lg">
+      <div className="flex md:flex-row flex-col gap-5 items-center">
         <img
           src={img}
           className="w-52 h-52 rounded-lg overflow-hidden"

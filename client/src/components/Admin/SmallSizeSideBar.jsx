@@ -1,34 +1,40 @@
 import React, { useState } from "react";
+import { adminNavLinks } from "../../utils/adminNavlinks";
+import NavigationLink from "./NavigationLink";
 import { CiUser } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { IoLogOutOutline } from "react-icons/io5";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { useSelector } from "react-redux";
-import useLogoutUser from "../../hooks/auth/useLogoutUser";
 import Loading from "../Loading";
+import { IoMdClose } from "react-icons/io";
+import useLogoutUser from "../../hooks/auth/useLogoutUser";
+import { useSelector } from "react-redux";
 
-export default function AdminHead({ toggle, toggleFunction, small, setSmall }) {
+export default function SmallSizeSideBar({ setSmall }) {
   const { user } = useSelector((state) => state.user);
   const [showLogout, setShowLogout] = useState(false);
   const { logout, loading } = useLogoutUser();
   return (
-    <div className="p-3 h-20 bg-homeBg md:rounded-2xl w-full text-white flex justify-between items-center sticky top-0">
+    <div className="md:hidden w-full bg-homeBg px-5 py-10 absolute right-0 left-0 z-20 animate-slideInTop">
       <div
-        className="text-2xl hidden md:block"
-        onClick={() => toggleFunction(!toggle)}
+        className="flex justify-end text-white text-2xl"
+        onClick={() => setSmall(false)}
       >
-        <RxHamburgerMenu />
+        <IoMdClose />
       </div>
-      <div className="text-lg md:text-2xl">DAHAB MINERS ADMIN</div>
-      <div
-        className="text-2xl md:hidden block"
-        onClick={() => setSmall(!small)}
-      >
-        <RxHamburgerMenu />
+      <div className="flex flex-col gap-3">
+        {adminNavLinks.map((x) => (
+          <NavigationLink
+            key={x.id}
+            icon={x.icon}
+            name={x.name}
+            path={x.path}
+            urlworld={x.urlword}
+          />
+        ))}
       </div>
-      <div className="relative hidden md:block">
+      <div className="relative text-white">
         <div
-          className="flex cursor-pointer gap-2 items-center border p-2 rounded-lg hover:shadow-md hover:shadow-white hover:bg-blue-500 nav-link"
+          className="flex cursor-pointer gap-2 justify-between items-center border p-2 rounded-lg hover:shadow-md hover:shadow-white hover:bg-blue-500 nav-link"
           onClick={() => setShowLogout(!showLogout)}
         >
           <div>
@@ -54,5 +60,4 @@ export default function AdminHead({ toggle, toggleFunction, small, setSmall }) {
       </div>
     </div>
   );
-  S;
 }
