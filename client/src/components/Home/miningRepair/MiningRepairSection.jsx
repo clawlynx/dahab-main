@@ -7,9 +7,9 @@ export default function MiningRepairSection() {
       <div className="bg-white p-10 flex flex-col gap-10 rounded-lg">
         <div className="flex xl:flex-row flex-col gap-5 xl:text-left text-center  justify-around items-center">
           <div>
-            <p className="text-base font-semibold text-homeBgGradient">
-              Repair Miners
-            </p>
+            <h3 className="text-base font-semibold text-homeBgGradient">
+              Miner repair Abu Dhabi UAE
+            </h3>
             <h4 className="text-[40px] font-semibold gradient-heading xl:max-w-[380px]">
               From Equipment to Maintenance : Your Complete Mining Partner
             </h4>

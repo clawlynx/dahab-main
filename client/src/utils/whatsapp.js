@@ -24,7 +24,7 @@ export const handleEnquiryFormClick = ({
 
 export const handleProductEnquiry = ({ name }) => {
   const phoneNumber = "+971568145866";
-  const messageContent = `Hi i would like to know more details about the product ${name}`;
+  const messageContent = `Hi i would like to know more details about the Miner ${name}`;
   const encodedMessage = encodeURIComponent(messageContent);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
