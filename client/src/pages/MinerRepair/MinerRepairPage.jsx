@@ -20,11 +20,11 @@ export default function MinerRepairPage() {
       <MinerRepairHeadSection scrollfunction={scrollToView} />
       <RepairFeatures scrollfunction={scrollToView} />
       <BuyBox />
-      <RepairSolutions />
-      <PriceSection ref={selectedRef} />
 
+      <PriceSection ref={selectedRef} />
+      <RepairSolutions />
       {/* <div className="h-[2px] bg-white"></div> */}
-      {/* <FAQ /> */}
+      <FAQ />
     </div>
   );
 }
