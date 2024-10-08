@@ -32,7 +32,7 @@ app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:5173",
   "https://dahabminers.ae",
-  "https://visit.dahabminers.ae/",
+  "https://visit.dahabminers.ae",
 ];
 
 app.use(
@@ -46,8 +46,11 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Ensure all necessary methods are allowed
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   })
 );
+app.options("*", cors());
 
 app.get("/", (req, res) => {
   res.send("Welcome to dahab server");
